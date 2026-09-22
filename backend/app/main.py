@@ -114,6 +114,42 @@ async def global_exception_handler(request: Request, exc: Exception):
 # Mount API routers
 app.include_router(api_router)
 
+# Mount static files if frontend build exists (ensures serverless resilience)
+dist_dir = None
+for candidate in [
+    BASE_DIR / "frontend" / "dist",
+    BASE_DIR / "dist",
+    Path("/var/task/frontend/dist"),
+    Path("/var/task/dist"),
+]:
+    if candidate.is_dir() and (candidate / "index.html").is_file():
+        dist_dir = candidate
+        break
+
+if dist_dir:
+    from fastapi.staticfiles import StaticFiles
+    from fastapi.responses import FileResponse
+
+    assets_dir = dist_dir / "assets"
+    if assets_dir.is_dir():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
+
+    @app.get("/")
+    @app.get("/index.html")
+    @app.get("/report/{full_path:path}")
+    async def serve_frontend(full_path: str = ""):
+        return FileResponse(dist_dir / "index.html")
+
+    @app.get("/favicon.ico")
+    @app.get("/favicon.png")
+    async def serve_favicon():
+        fav = dist_dir / "favicon.ico"
+        if not fav.is_file():
+            fav = dist_dir / "favicon.png"
+        if fav.is_file():
+            return FileResponse(fav)
+        return FileResponse(dist_dir / "index.html")
+
 
 def run_data_foundation_verification() -> int:
     """CLI utility running the data foundation verification from Phase 1."""

@@ -28,8 +28,19 @@ class Settings:
             self.base_dir = current_file.parents[2]
             self._explicit_base_dir = False
 
-        self.cache_dir = self.base_dir / ".cache"
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        # Resolve writable cache directory safely:
+        # In serverless environments (e.g. AWS Lambda / Vercel), /var/task is read-only.
+        import tempfile
+        try:
+            candidate_cache = self.base_dir / ".cache"
+            candidate_cache.mkdir(parents=True, exist_ok=True)
+            self.cache_dir = candidate_cache
+        except (OSError, PermissionError):
+            self.cache_dir = Path(tempfile.gettempdir()) / "nexa_cache"
+            try:
+                self.cache_dir.mkdir(parents=True, exist_ok=True)
+            except Exception:
+                pass
 
     @property
     def advertising_workbook_candidates(self) -> List[str]:

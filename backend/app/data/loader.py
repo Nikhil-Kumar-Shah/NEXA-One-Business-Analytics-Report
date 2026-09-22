@@ -66,7 +66,10 @@ def get_evaluated_advertising_path(source_path: Path) -> Path:
     formula fidelity without touching, editing, or overwriting the original file.
     """
     cache_dir = settings.cache_dir
-    cache_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        cache_dir.mkdir(parents=True, exist_ok=True)
+    except (OSError, PermissionError):
+        pass
     evaluated_file = cache_dir / "evaluated_advertising.xlsx"
 
     source_mtime = source_path.stat().st_mtime
