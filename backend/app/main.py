@@ -111,14 +111,6 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 
-@app.middleware("http")
-async def handle_vercel_rewrites(request: Request, call_next):
-    matched_path = request.headers.get("x-matched-path")
-    if matched_path and request.url.path in ("/api/index.py", "/api/index", "/api/index.py/"):
-        request.scope["path"] = matched_path
-    return await call_next(request)
-
-
 # Mount API routers (both prefixed /api and root level for complete Vercel resilience)
 app.include_router(api_router)
 app.include_router(raw_router)
@@ -126,7 +118,6 @@ app.include_router(raw_router)
 
 @app.get("/api")
 @app.get("/api/")
-@app.get("/api/index.py")
 async def api_entrypoint_status():
     return {"status": "ok", "service": "nexa-one-analytics-api"}
 
