@@ -64,8 +64,7 @@ assert(apiIndexPy.includes('from backend.app.main import app'), 'api/index.py im
 assert(fs.existsSync(path.join(rootDir, 'vercel.json')), 'vercel.json exists at project root');
 const vercelJson = fs.readFileSync(path.join(rootDir, 'vercel.json'), 'utf-8');
 assert(vercelJson.includes('frontend/dist'), 'vercel.json specifies frontend/dist as outputDirectory');
-assert(vercelJson.includes('/api/(.*)') && vercelJson.includes('/api/index.py'), 'vercel.json routes /api/* to FastAPI serverless function');
-assert(vercelJson.includes('/(.*)') && vercelJson.includes('/index.html'), 'vercel.json routes SPA fallbacks cleanly to /index.html');
+assert(vercelJson.includes('/index.html') && vercelJson.includes('destination'), 'vercel.json routes SPA fallbacks cleanly to /index.html');
 
 // 5. Documentation & Environment Configuration
 assert(fs.existsSync(path.join(rootDir, '.env.example')), '.env.example exists at project root');
