@@ -15,17 +15,24 @@ from backend.app.api.sources import router as sources_router
 from backend.app.api.strategy import router as strategy_router
 
 api_router = APIRouter(prefix="/api")
+raw_router = APIRouter()
 
-api_router.include_router(health_router)
-api_router.include_router(overview_router)
-api_router.include_router(data_quality_router)
-api_router.include_router(advertising_router)
-api_router.include_router(correlation_router)
-api_router.include_router(regression_router)
-api_router.include_router(channels_router)
-api_router.include_router(customer_drivers_router)
-api_router.include_router(market_trends_router)
-api_router.include_router(strategy_router)
-api_router.include_router(sources_router)
+routers = [
+    health_router,
+    overview_router,
+    data_quality_router,
+    advertising_router,
+    correlation_router,
+    regression_router,
+    channels_router,
+    customer_drivers_router,
+    market_trends_router,
+    strategy_router,
+    sources_router,
+]
 
-__all__ = ["api_router"]
+for r in routers:
+    api_router.include_router(r)
+    raw_router.include_router(r)
+
+__all__ = ["api_router", "raw_router"]

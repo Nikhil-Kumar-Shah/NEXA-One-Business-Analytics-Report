@@ -62,9 +62,15 @@ def get_evaluated_advertising_path(source_path: Path) -> Path:
     """Generates or retrieves an evaluated copy of the advertising workbook.
 
     Because the original workbook contains Excel formulas without pre-cached <v>
-    tags, evaluating it via LibreOffice into an external cache ensures complete
-    formula fidelity without touching, editing, or overwriting the original file.
+    tags, evaluating it into an external cache or using the pre-bundled evaluated
+    file ensures complete formula fidelity without requiring LibreOffice in
+    serverless production environments.
     """
+    # 1. Check for bundled pre-evaluated workbook
+    bundled_evaluated = Path(__file__).resolve().parent / "evaluated_advertising.xlsx"
+    if bundled_evaluated.is_file():
+        return bundled_evaluated
+
     cache_dir = settings.cache_dir
     try:
         cache_dir.mkdir(parents=True, exist_ok=True)

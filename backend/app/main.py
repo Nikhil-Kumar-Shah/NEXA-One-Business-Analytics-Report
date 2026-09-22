@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from backend.app.api import api_router
+from backend.app.api import api_router, raw_router
 from backend.app.config import settings
 from backend.app.data.repository import repository
 from backend.app.data.validators import ValidationError
@@ -111,8 +111,24 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 
-# Mount API routers
+@app.middleware("http")
+async def handle_vercel_rewrites(request: Request, call_next):
+    matched_path = request.headers.get("x-matched-path")
+    if matched_path and request.url.path in ("/api/index.py", "/api/index", "/api/index.py/"):
+        request.scope["path"] = matched_path
+    return await call_next(request)
+
+
+# Mount API routers (both prefixed /api and root level for complete Vercel resilience)
 app.include_router(api_router)
+app.include_router(raw_router)
+
+
+@app.get("/api")
+@app.get("/api/")
+@app.get("/api/index.py")
+async def api_entrypoint_status():
+    return {"status": "ok", "service": "nexa-one-analytics-api"}
 
 # Mount static files if frontend build exists (ensures serverless resilience)
 dist_dir = None
