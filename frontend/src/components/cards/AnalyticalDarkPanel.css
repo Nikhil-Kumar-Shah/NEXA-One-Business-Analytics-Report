@@ -1,0 +1,97 @@
+.vl-dark-panel {
+  background: var(--dark-panel);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 24px rgba(8, 13, 18, 0.14),
+    0 2px 4px rgba(8, 13, 18, 0.08);
+}
+
+.vl-dark-panel__badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vl-dark-panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2vw, 23px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.vl-dark-panel__statement {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.vl-dark-panel__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vl-dark-panel__stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vl-dark-panel__stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.vl-dark-panel__stat-support {
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  padding-left: 2px;
+}
+
+.vl-dark-panel__stat-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.vl-dark-panel__stat-value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.vl-dark-panel__stat-value--accent {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+.vl-dark-panel__action {
+  margin-top: 4px;
+}

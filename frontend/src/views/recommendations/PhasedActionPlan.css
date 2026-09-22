@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Section 08: Phased Action Plan Styles
+   ========================================================================== */
+
+.phased-plan-section {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 1.25rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.phased-plan-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.phased-plan-icon {
+  color: var(--color-brand-primary, #0f2744);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.phased-plan-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 0.25rem 0;
+}
+
+.phased-plan-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+.phased-plan-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+}
+
+.phased-card {
+  background: var(--bg-surface-elevated, #f8fafc);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-top: 3px solid var(--color-brand-primary, #0f2744);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.phased-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.phased-step-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-brand-primary, #0f2744);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.phased-timing-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.675rem;
+  color: #64748b;
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.phased-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+}
+
+.phased-action-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phased-action-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #334155);
+}
+
+.phased-action-num {
+  font-weight: 700;
+  color: var(--color-brand-primary, #0f2744);
+  flex-shrink: 0;
+}
+
+.phased-connector {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .phased-plan-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .phased-plan-timeline {
+    grid-template-columns: 1fr;
+  }
+}

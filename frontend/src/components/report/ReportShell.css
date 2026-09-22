@@ -1,0 +1,77 @@
+.report-app-shell {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.report-main-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.report-content-wrapper {
+  flex: 1;
+  padding: 24px 32px 72px;
+  width: 100%;
+}
+
+.report-content-column {
+  max-width: var(--content-max-width, 1200px);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-section-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .report-app-shell {
+    flex-direction: column;
+  }
+
+  .report-content-wrapper {
+    padding: 16px 20px 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .report-content-wrapper {
+    padding: 12px 14px 40px;
+  }
+}
+
+/* Print Overrides */
+@media print {
+  .report-app-shell {
+    display: block;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .report-sidebar,
+  .report-top-nav,
+  .local-section-nav,
+  .mobile-menu-overlay,
+  .report-section-nav {
+    display: none !important;
+  }
+
+  .report-content-wrapper {
+    padding: 0;
+    max-width: none;
+  }
+}

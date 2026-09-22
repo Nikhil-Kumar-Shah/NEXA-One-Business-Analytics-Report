@@ -1,0 +1,243 @@
+/* ==========================================================================
+   ReportFooter Styles (Phase 13B)
+   Minimal, professional, author-signed analytical publication footer.
+   Height: ~180-240px desktop. Zero marketing, zero sitemap repetition.
+   ========================================================================== */
+
+.report-footer {
+  width: 100%;
+  border-top: 1px solid var(--line, #e2e8f0);
+  background-color: var(--surface-soft, #f8fafc);
+  padding: 36px 24px 20px 24px;
+  margin-top: auto;
+  color: var(--ink, #0f172a);
+}
+
+.report-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3-Zone Desktop Grid (1.4fr : 1fr : 0.7fr) */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   ZONE A — REPORT IDENTITY & AUTHOR
+   -------------------------------------------------------------------------- */
+.footer-zone-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-brand-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink, #0f172a);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.footer-brand-subtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.footer-report-descriptor {
+  font-size: 12px;
+  color: var(--text-muted, #64748b);
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+
+.footer-author-signature {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-author-lead {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+}
+
+.footer-author-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink, #0f172a);
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   ZONE B & C — HEADINGS & LINKS
+   -------------------------------------------------------------------------- */
+.footer-zone-heading {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #64748b);
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.footer-resource-list,
+.footer-utility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-resource-item,
+.footer-utility-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary, #475569);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color var(--transition-fast, 0.15s ease);
+}
+
+.footer-resource-item:hover,
+.footer-utility-item:hover {
+  color: var(--ink, #0f172a);
+}
+
+.footer-resource-item:focus-visible,
+.footer-utility-item:focus-visible {
+  outline: 2px solid var(--color-brand-primary, #0f2744);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.footer-icon {
+  color: var(--text-muted, #94a3b8);
+  flex-shrink: 0;
+  transition: color var(--transition-fast, 0.15s ease);
+}
+
+.footer-resource-item:hover .footer-icon,
+.footer-utility-item:hover .footer-icon {
+  color: var(--color-brand-primary, #0f2744);
+}
+
+.footer-ext-icon {
+  color: var(--text-muted, #cbd5e1);
+  margin-left: 2px;
+  flex-shrink: 0;
+  transition: color var(--transition-fast, 0.15s ease);
+}
+
+.footer-resource-item:hover .footer-ext-icon {
+  color: var(--text-secondary, #64748b);
+}
+
+.footer-link-text {
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   DIVIDER & BOTTOM BAR
+   -------------------------------------------------------------------------- */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--line, #e2e8f0);
+  margin: 24px 0 16px 0;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+}
+
+.footer-copy {
+  font-weight: 500;
+  color: var(--text-secondary, #64748b);
+}
+
+.footer-bottom-sep {
+  color: var(--line-strong, #cbd5e1);
+  user-select: none;
+}
+
+.footer-bottom-product {
+  color: var(--text-muted, #64748b);
+}
+
+.footer-bottom-desc {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .footer-main-grid {
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .report-footer {
+    padding: 28px 16px 16px 16px;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-utility-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-divider {
+    margin: 20px 0 14px 0;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .footer-bottom-sep {
+    display: none;
+  }
+}

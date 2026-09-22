@@ -1,0 +1,98 @@
+.report-subnav-strip {
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 20;
+  backdrop-filter: blur(8px);
+}
+
+.report-subnav-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.report-subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.vl-tabs {
+  --vl-ink: #080d12;
+  --vl-paper: #ffffff;
+  --vl-mist: #f3f6f8;
+  --vl-slate: #687788;
+  --vl-hairline: #d6dde3;
+  --vl-lime-deep: #a8cc22;
+  --vl-focus-ring: 0 0 0 3px rgba(168, 204, 34, 0.35);
+  --vl-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  background: var(--vl-mist);
+  border: 1px solid var(--vl-hairline);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.vl-tabs__tab {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vl-slate);
+  background: transparent;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    background 200ms var(--vl-ease),
+    color 200ms var(--vl-ease),
+    box-shadow 200ms var(--vl-ease);
+  white-space: nowrap;
+}
+
+.vl-tabs__tab:hover {
+  color: var(--vl-ink);
+}
+
+.vl-tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--vl-focus-ring);
+}
+
+.vl-tabs__tab--active {
+  background: var(--vl-paper) !important;
+  color: var(--vl-ink) !important;
+  box-shadow:
+    0 1px 0 rgba(8, 13, 18, 0.04),
+    0 1px 2px rgba(8, 13, 18, 0.04);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .report-subnav-strip {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .vl-tabs__tab {
+    padding: 0 12px;
+    font-size: 12px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,188 @@
+/* ResearchEvidenceCard styling adhering to Phase 3 design tokens */
+.research-evidence-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.research-evidence-card:hover {
+  border-color: var(--color-border-hover, var(--color-primary-light));
+  box-shadow: var(--shadow-sm);
+}
+
+.research-evidence-card.is-india-evidence {
+  border-left: 3px solid #EAB308; /* distinctive amber indicator for India evidence */
+}
+
+/* Header */
+.rec-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.rec-factor-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.rec-factor-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.rec-category-badge {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  padding: 1px 6px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.rec-badge-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Body / Finding */
+.rec-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rec-quantitative-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rec-value-display {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.rec-metric-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-teal, #0D9488);
+  line-height: 1;
+}
+
+.rec-metric-measure {
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.rec-qualitative-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.rec-qualitative-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+}
+
+.rec-finding-text {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Footer / Metadata */
+.rec-footer {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rec-metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  font-size: 11px;
+}
+
+.rec-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rec-meta-item.rec-meta-sample {
+  grid-column: span 3;
+}
+
+.rec-meta-label {
+  color: var(--color-text-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rec-meta-value {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  overflow-wrap: break-word;
+}
+
+.rec-link-action {
+  align-self: flex-start;
+}
+
+.rec-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--color-accent-teal, #0D9488);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: text-decoration var(--transition-fast);
+}
+
+.rec-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .rec-metadata-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rec-meta-item.rec-meta-sample {
+    grid-column: span 2;
+  }
+}

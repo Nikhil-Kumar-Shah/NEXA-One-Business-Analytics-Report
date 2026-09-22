@@ -1,0 +1,112 @@
+.vl-kpi-tile {
+  --vl-ink: #080d12;
+  --vl-paper: #ffffff;
+  --vl-mist-deep: #e7edf1;
+  --vl-slate: #687788;
+  --vl-hairline: #d6dde3;
+  --vl-lime: #c7ff19;
+  --vl-lime-deep: #b7ee00;
+
+  background: var(--vl-paper);
+  border: 1px solid var(--vl-hairline);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-height: 110px;
+  max-height: 145px;
+  box-shadow:
+    0 1px 0 rgba(8, 13, 18, 0.04),
+    0 1px 2px rgba(8, 13, 18, 0.04);
+  transition: transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 180ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.vl-kpi-tile:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 12px rgba(8, 13, 18, 0.05),
+    0 1px 2px rgba(8, 13, 18, 0.04);
+}
+
+.vl-kpi-tile__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.vl-kpi-tile__ticker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--vl-slate);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.vl-kpi-tile__delta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--vl-lime);
+  color: var(--vl-ink);
+  letter-spacing: 0.02em;
+}
+
+.vl-kpi-tile__value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(26px, 2.4vw, 32px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--vl-ink);
+}
+
+.vl-kpi-tile__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.vl-kpi-tile__sub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--vl-slate);
+  line-height: 1.35;
+  max-width: 140px;
+}
+
+.vl-kpi-tile__spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 24px;
+  flex: 1;
+  max-width: 80px;
+}
+
+.vl-kpi-tile__bar {
+  flex: 1;
+  background: var(--vl-mist-deep);
+  border-radius: 3px;
+  min-height: 6px;
+  transition: height 250ms ease;
+}
+
+.vl-kpi-tile__bar--lime {
+  background: var(--vl-lime);
+}
+
+.vl-kpi-tile__bar--deep {
+  background: var(--vl-lime-deep);
+}
+
+.vl-kpi-tile__bar--ink {
+  background: var(--vl-ink);
+}

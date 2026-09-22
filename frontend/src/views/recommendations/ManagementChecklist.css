@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Section 08: Management Checklist & Prohibited Decisions Styles
+   ========================================================================== */
+
+.management-audit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4, 1rem);
+}
+
+.mgmt-checklist-card,
+.mgmt-avoid-card {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.mgmt-checklist-card {
+  border-top: 4px solid #10b981;
+}
+
+.mgmt-avoid-card {
+  border-top: 4px solid #ef4444;
+}
+
+.mgmt-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.mgmt-checklist-icon {
+  color: #10b981;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.mgmt-avoid-icon {
+  color: #ef4444;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.mgmt-card-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 0.25rem 0;
+}
+
+.mgmt-card-title.avoid {
+  color: #b91c1c;
+}
+
+.mgmt-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+.mgmt-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mgmt-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.mgmt-check-item:hover {
+  background: #f8fafc;
+}
+
+.mgmt-check-item.completed .mgmt-check-text {
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.mgmt-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: all 0.15s ease;
+}
+
+.mgmt-checkbox.checked {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.check-svg {
+  stroke-width: 3;
+}
+
+.mgmt-check-text {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #334155);
+}
+
+.mgmt-avoid-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mgmt-avoid-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #334155);
+}
+
+.avoid-symbol {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: -0.05rem;
+}
+
+@media (max-width: 900px) {
+  .management-audit-grid {
+    grid-template-columns: 1fr;
+  }
+}

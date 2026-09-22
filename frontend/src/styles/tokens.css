@@ -1,0 +1,173 @@
+/**
+ * NEXA One Design Tokens — DESIGN.md Specification
+ * 
+ * Visual formula:
+ * Pale Platinum Background (#e9eef2)
+ *   + Near-Black Typography (#080d12, #17202a)
+ *   + Near-Black Analytical Panels (#080d12, #111820)
+ *   + Electric Lime Accent (#c7ff19, #d6ff3d)
+ *   + Soft Gray Borders (#d6dde3)
+ *   + Large Editorial Typography (Instrument Sans / Inter)
+ *   + Utilitarian Mono Numerics (JetBrains Mono)
+ *   + Compact Data UI (18px cards, pill badges, clean tables)
+ */
+
+:root {
+  /* -------------------------------------------------------------------------
+   * DESIGN.md Color System
+   * ------------------------------------------------------------------------- */
+  --bg: #e9eef2;
+  --surface: #ffffff;
+  --surface-soft: #f3f6f8;
+  --surface-muted: #e7edf1;
+
+  --ink: #080d12;
+  --ink-soft: #1a222b;
+  --text: #17202a;
+  --text-secondary: #687788;
+  --text-muted: #8996a3;
+
+  --line: #d6dde3;
+  --line-strong: #c5ced7;
+
+  --accent: #c7ff19;
+  --accent-lime: #d6ff3d;
+  --accent-strong: #b7ee00;
+  --accent-deep: #a8cc22;
+  --accent-soft: rgba(199, 255, 25, 0.18);
+  --accent-ink: #172000;
+
+  --positive: #8fd000;
+  --warning: #d7a900;
+  --negative: #c95a5a;
+
+  --dark-panel: #080d12;
+  --dark-panel-soft: #111820;
+
+  /* Backward-compatible token mappings for seamless integration */
+  --color-primary: var(--ink);
+  --color-primary-hover: var(--ink-soft);
+  --color-secondary: var(--text-secondary);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-soft);
+  --color-surface-hover: var(--surface-soft);
+  --color-border: var(--line);
+  --color-border-subtle: var(--line);
+  --color-border-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: #ffffff;
+  --color-accent: var(--accent-strong);
+  --color-accent-bg: var(--accent-soft);
+  --color-accent-border: var(--accent);
+  --color-positive: var(--positive);
+  --color-positive-bg: #f5fbe8;
+  --color-positive-border: #d4ed9a;
+  --color-warning: var(--warning);
+  --color-warning-bg: #fdfbf0;
+  --color-warning-border: #f6e69f;
+  --color-negative: var(--negative);
+  --color-negative-bg: #fcf1f1;
+  --color-negative-border: #f3baba;
+  --color-info: #0284c7;
+  --color-info-bg: #f0f9ff;
+  --color-info-border: #bae6fd;
+
+  --color-focus-ring: rgba(168, 204, 34, 0.4);
+
+  /* -------------------------------------------------------------------------
+   * Typography System (DESIGN.md Section 5)
+   * ------------------------------------------------------------------------- */
+  --font-sans: 'Instrument Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Instrument Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Instrument Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, Menlo, monospace;
+
+  /* Font sizes (Refined for Premium Analytical Report - Section 6, 7, 27) */
+  --text-display: clamp(2.5rem, 3.5vw, 3rem);     /* 40-48px (controlled report heading) */
+  --text-h1: clamp(2.25rem, 3vw, 2.75rem);         /* 36-44px */
+  --text-h2: clamp(1.5rem, 2.2vw, 1.875rem);       /* 24-30px */
+  --text-h3: 1.25rem;                              /* 20px */
+  --text-page-title: var(--text-h1);
+  --text-section-title: var(--text-h2);
+  --text-subsection: var(--text-h3);
+  --text-body-large: 1.0625rem;                    /* 17px */
+  --text-body: 0.9375rem;                          /* 15px */
+  --text-small: 0.8125rem;                         /* 13px */
+  --text-caption: 0.75rem;                         /* 12px */
+  --text-label: 0.6875rem;                         /* 11px */
+
+  /* Line heights */
+  --leading-tight: 1.08;
+  --leading-snug: 1.2;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.65;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  /* -------------------------------------------------------------------------
+   * Spacing Scale (8px base)
+   * ------------------------------------------------------------------------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-30: 7.5rem;   /* 120px */
+
+  /* -------------------------------------------------------------------------
+   * Borders & Restrained Radii (DESIGN.md Section 37)
+   * ------------------------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+  --radius-full: 999px;
+
+  /* -------------------------------------------------------------------------
+   * Shadows (Quiet, crisp elevation)
+   * ------------------------------------------------------------------------- */
+  --shadow-none: none;
+  --shadow-subtle: 0 1px 2px rgba(8, 13, 18, 0.04);
+  --shadow-card: 0 1px 0 rgba(8, 13, 18, 0.04), 0 1px 2px rgba(8, 13, 18, 0.04);
+  --shadow-dark: 0 12px 32px rgba(8, 13, 18, 0.16);
+  --shadow-modal: 0 16px 40px -4px rgba(8, 13, 18, 0.15);
+
+  /* -------------------------------------------------------------------------
+   * Layout Dimensions (Section 4, 5, 12, 17)
+   * ------------------------------------------------------------------------- */
+  --sidebar-width: 250px;
+  --header-height: 60px;
+  --subnav-height: 44px;
+  --content-max-width: 1200px;
+  --reading-width: 720px;
+
+  /* Chart Heights (Section 12, 13) */
+  --chart-height-standard: 360px;
+  --chart-height-analytical: 420px;
+  --chart-height-compact: 280px;
+  --chart-height-scatter: 360px;
+
+  /* -------------------------------------------------------------------------
+   * Transitions
+   * ------------------------------------------------------------------------- */
+  --vl-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --transition-fast: 150ms var(--vl-ease);
+  --transition-normal: 200ms var(--vl-ease);
+}

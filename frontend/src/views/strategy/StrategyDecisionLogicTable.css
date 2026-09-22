@@ -1,0 +1,87 @@
+/* StrategyDecisionLogicTable styling */
+.strategy-decision-logic-container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sdl-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sdl-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sdl-subtitle {
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  max-width: 820px;
+}
+
+.sdl-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sdl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body-sm);
+  text-align: left;
+}
+
+.sdl-table th,
+.sdl-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: top;
+  line-height: var(--line-height-normal);
+}
+
+.sdl-table thead th {
+  background-color: var(--color-surface-muted);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sdl-layer-cell {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.sdl-shows-cell {
+  color: var(--color-text-primary);
+}
+
+.sdl-informs-cell {
+  color: var(--color-text-secondary);
+}
+
+.sdl-limit-cell {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .sdl-table th,
+  .sdl-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+}

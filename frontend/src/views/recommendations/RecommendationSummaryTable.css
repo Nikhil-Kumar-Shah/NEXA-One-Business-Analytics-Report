@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Section 08: Recommendation Summary Table Styles
+   ========================================================================== */
+
+.rec-summary-section {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.rec-summary-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.rec-summary-icon {
+  color: var(--color-brand-primary, #0f2744);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.rec-summary-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 0.25rem 0;
+}
+
+.rec-summary-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+.rec-summary-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 8px;
+}
+
+.rec-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.825rem;
+  text-align: left;
+}
+
+.rec-summary-table th,
+.rec-summary-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-light, #e2e8f0);
+  vertical-align: top;
+}
+
+.rec-summary-table thead th {
+  background: var(--bg-surface-elevated, #f8fafc);
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.rec-summary-name-cell {
+  font-weight: 600;
+  color: var(--color-brand-primary, #0f2744);
+  min-width: 200px;
+}
+
+.rec-summary-evidence-cell {
+  font-size: 0.775rem;
+  color: #334155;
+  min-width: 220px;
+}
+
+.rec-summary-role-cell {
+  color: var(--text-secondary, #475569);
+  min-width: 180px;
+}
+
+.rec-summary-priority-cell {
+  white-space: nowrap;
+}
+
+.rec-priority-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+.rec-summary-val-cell {
+  color: var(--text-secondary, #334155);
+  min-width: 180px;
+}
+
+.rec-priority-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: var(--bg-surface-elevated, #f8fafc);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted, #64748b);
+  border-left: 3px solid #64748b;
+}
+
+.rec-priority-note strong {
+  color: var(--text-primary, #0f172a);
+}

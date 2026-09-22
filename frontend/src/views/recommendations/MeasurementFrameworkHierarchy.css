@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Section 08: Measurement Framework Hierarchy Styles
+   ========================================================================== */
+
+.measure-hierarchy-section {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.measure-hierarchy-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.measure-hierarchy-icon {
+  color: var(--color-brand-primary, #0f2744);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.measure-hierarchy-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 0.25rem 0;
+}
+
+.measure-hierarchy-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+.measure-hierarchy-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3, 0.75rem);
+}
+
+.measure-level-card {
+  background: var(--bg-surface-elevated, #f8fafc);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 3px solid #0f2744;
+}
+
+.measure-level-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.measure-level-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-brand-primary, #0f2744);
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.measure-level-icon {
+  color: var(--color-brand-primary, #0f2744);
+}
+
+.measure-level-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+}
+
+.measure-level-desc {
+  font-size: 0.775rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.measure-level-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.measure-level-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary, #334155);
+}
+
+.measure-bullet {
+  color: var(--color-brand-primary, #0f2744);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .measure-hierarchy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .measure-hierarchy-grid {
+    grid-template-columns: 1fr;
+  }
+}

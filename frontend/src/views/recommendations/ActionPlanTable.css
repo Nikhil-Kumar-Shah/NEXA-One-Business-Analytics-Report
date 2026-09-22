@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Section 08: Action Plan Table Styles
+   ========================================================================== */
+
+.action-table-section {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.action-table-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.action-table-icon {
+  color: var(--color-brand-primary, #0f2744);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.action-table-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 0.25rem 0;
+}
+
+.action-table-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+.action-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 8px;
+}
+
+.action-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.825rem;
+  text-align: left;
+}
+
+.action-table th,
+.action-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-light, #e2e8f0);
+  vertical-align: top;
+}
+
+.action-table thead th {
+  background: var(--bg-surface-elevated, #f8fafc);
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.action-name-cell {
+  font-weight: 600;
+  color: var(--color-brand-primary, #0f2744);
+  min-width: 180px;
+}
+
+.action-timing-cell {
+  white-space: nowrap;
+}
+
+.action-timing-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+.action-trigger-cell {
+  font-size: 0.775rem;
+  color: #475569;
+  min-width: 160px;
+}
+
+.action-owner-cell {
+  min-width: 160px;
+}
+
+.action-owner-badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.action-output-cell {
+  color: var(--text-secondary, #334155);
+  min-width: 180px;
+}
+
+.action-gate-cell {
+  min-width: 220px;
+}
+
+.gate-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border-left: 3px solid #10b981;
+}
+
+.gate-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.action-table-note {
+  font-size: 0.8rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nexa-one-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NEXA One Business Analytics Report — Interactive Analytical Publication",
+  "scripts": {
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "test": "npm --prefix frontend test",
+    "dev": "npm --prefix frontend run dev"
+  }
+}

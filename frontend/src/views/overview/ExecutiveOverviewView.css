@@ -1,0 +1,368 @@
+.executive-overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* Two-Column Editorial Statement (Section 8 & 9) */
+.editorial-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 0 0 12px;
+}
+
+.hero-statement-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.editorial-meta-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.editorial-display-heading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.hero-lead-paragraph {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0;
+}
+
+.hero-evidence-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Metric Grid: 4 columns desktop, 2 tablet, 1 mobile (DESIGN.md Section 16) */
+.metric-grid-section {
+  width: 100%;
+}
+
+.editorial-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Cards & Sections */
+.editorial-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 1px 2px rgba(8, 13, 18, 0.03);
+}
+
+.editorial-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.editorial-section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.editorial-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.editorial-card-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 740px;
+}
+
+.editorial-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.editorial-source-text {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.editorial-stat-subtext {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Key Findings Grid */
+.overview-group-header {
+  margin-bottom: 14px;
+}
+
+.overview-group-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  margin: 0 0 4px 0;
+}
+
+.overview-group-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.key-findings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.finding-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.finding-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(8, 13, 18, 0.04);
+}
+
+.finding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.finding-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.finding-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.finding-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  flex: 1;
+}
+
+.finding-metrics-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--surface-muted);
+  font-size: 12px;
+  color: var(--ink);
+  flex-wrap: wrap;
+}
+
+.finding-metric-label {
+  color: var(--text-secondary);
+  margin-right: 4px;
+}
+
+/* Model Evidence & Formula Chip */
+.model-formula-chip {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.model-evidence-note {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Customer Factors 3x3 Grid (DESIGN.md Section 30) */
+.customer-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.customer-factor-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.customer-factor-card:hover {
+  background: var(--surface);
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
+}
+
+.customer-factor-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.customer-factor-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.customer-intro-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 760px;
+}
+
+/* Market Signals (DESIGN.md Section 31) */
+.market-signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.market-signal-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.market-signal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.market-signal-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.market-signal-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.market-signal-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive adjustments (DESIGN.md Section 40) */
+@media (max-width: 1080px) {
+  .editorial-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .editorial-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customer-factors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-findings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-factors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-card {
+    padding: 20px;
+  }
+}

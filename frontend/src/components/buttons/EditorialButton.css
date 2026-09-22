@@ -1,0 +1,96 @@
+.vl-btn {
+  --vl-ink: #080d12;
+  --vl-lime: #c7ff19;
+  --vl-lime-deep: #b7ee00;
+  --vl-focus-ring: 0 0 0 3px rgba(183, 238, 0, 0.35);
+  --vl-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  height: 44px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background 200ms var(--vl-ease),
+    transform 120ms var(--vl-ease),
+    box-shadow 200ms var(--vl-ease),
+    border-color 200ms var(--vl-ease);
+}
+
+/* Primary Lime Button */
+.vl-btn--primary {
+  color: var(--vl-ink);
+  background: var(--vl-lime);
+  box-shadow:
+    0 1px 0 rgba(8, 13, 18, 0.04),
+    0 8px 18px rgba(199, 255, 25, 0.4),
+    inset 0 0 0 1px var(--vl-lime-deep);
+}
+
+.vl-btn--primary:hover:not(:disabled) {
+  background: var(--vl-lime-deep);
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(8, 13, 18, 0.04),
+    0 10px 22px rgba(199, 255, 25, 0.5),
+    inset 0 0 0 1px var(--vl-lime-deep);
+}
+
+.vl-btn--primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary Button */
+.vl-btn--secondary {
+  color: var(--vl-ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 1px 2px rgba(8, 13, 18, 0.04);
+}
+
+.vl-btn--secondary:hover:not(:disabled) {
+  background: var(--surface-soft);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* Dark Button */
+.vl-btn--dark {
+  color: #ffffff;
+  background: var(--dark-panel);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vl-btn--dark:hover:not(:disabled) {
+  background: var(--dark-panel-soft);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.vl-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vl-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--vl-focus-ring);
+}
+
+.vl-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}

@@ -1,0 +1,109 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.status-badge.size-small {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+/* Neutral / Slate */
+.status-badge.variant-neutral {
+  color: var(--color-secondary);
+  background-color: var(--color-surface-muted);
+  border-color: var(--color-border);
+}
+
+/* Positive / Significant / Within range / Positive relationship */
+.status-badge.variant-positive {
+  color: var(--color-positive);
+  background-color: var(--color-positive-bg);
+  border-color: var(--color-positive-border);
+}
+
+/* Negative / Negative relationship */
+.status-badge.variant-negative {
+  color: var(--color-negative);
+  background-color: var(--color-negative-bg);
+  border-color: var(--color-negative-border);
+}
+
+/* Warning / Review / Not significant */
+.status-badge.variant-warning {
+  color: var(--color-warning);
+  background-color: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+}
+
+/* Info / Accent */
+.status-badge.variant-info {
+  color: var(--color-info);
+  background-color: var(--color-info-bg);
+  border-color: var(--color-info-border);
+}
+
+/* Evidence tags: India / Global / Primary / Supporting */
+.status-badge.variant-evidence-india {
+  color: #854D0E;
+  background-color: #FEF9C3;
+  border-color: #FEF08A;
+}
+
+[data-theme="dark"] .status-badge.variant-evidence-india {
+  color: #FACC15;
+  background-color: #422006;
+  border-color: #713F12;
+}
+
+.status-badge.variant-evidence-global {
+  color: #1E40AF;
+  background-color: #EFF6FF;
+  border-color: #BFDBFE;
+}
+
+[data-theme="dark"] .status-badge.variant-evidence-global {
+  color: #93C5FD;
+  background-color: #1E293B;
+  border-color: #1E3A8A;
+}
+
+.status-badge.variant-evidence-primary {
+  color: #4338CA;
+  background-color: #EEF2FF;
+  border-color: #C7D2FE;
+}
+
+[data-theme="dark"] .status-badge.variant-evidence-primary {
+  color: #A5B4FC;
+  background-color: #1E1B4B;
+  border-color: #312E81;
+}
+
+.status-badge.variant-evidence-supporting {
+  color: #475569;
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+[data-theme="dark"] .status-badge.variant-evidence-supporting {
+  color: #CBD5E1;
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+.status-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}

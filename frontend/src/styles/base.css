@@ -1,0 +1,301 @@
+/**
+ * Base styles, editorial typography hierarchy, and UI utility rules
+ * Specification: DESIGN.md
+ */
+
+@import './tokens.css';
+
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------------------------
+ * Typography Hierarchy (DESIGN.md Section 5 & 6, Refinement Section 6, 27)
+ * --------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.03em;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.035em;
+  line-height: var(--leading-tight);
+  color: var(--ink);
+}
+
+.text-page-title, h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.text-section-title, h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.text-subsection, h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.text-body-large {
+  font-size: var(--text-body-large);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  max-width: var(--reading-width);
+}
+
+.text-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  max-width: var(--reading-width);
+}
+
+p {
+  max-width: var(--reading-width);
+}
+
+.text-small {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  color: var(--text-muted);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+  line-height: var(--leading-normal);
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+.text-label {
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+.font-heading {
+  font-family: var(--font-display);
+}
+
+/* ---------------------------------------------------------------------------
+ * Editorial Highlight (DESIGN.md Section 6, Refinement Section 24)
+ * --------------------------------------------------------------------------- */
+.editorial-highlight {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-weight: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+ * Analytical Panels & Cards (Section 14 & 23)
+ * --------------------------------------------------------------------------- */
+.editorial-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.editorial-card:hover {
+  border-color: var(--line-strong);
+}
+
+.editorial-panel-dark {
+  background: var(--dark-panel);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 22px 26px;
+  box-shadow: var(--shadow-dark);
+}
+
+.editorial-panel-dark h2,
+.editorial-panel-dark h3,
+.editorial-panel-dark h4 {
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Tables (DESIGN.md Section 21 & 22, Refinement Section 26)
+ * --------------------------------------------------------------------------- */
+.editorial-table-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background: var(--surface-soft);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+td {
+  padding: 16px 18px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font-size: var(--text-body);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+ * Status Pills & Badges (DESIGN.md Section 24)
+ * --------------------------------------------------------------------------- */
+.vl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  color: var(--text-secondary);
+}
+
+.vl-pill--lime {
+  background: var(--accent);
+  border-color: var(--accent-strong);
+  color: var(--accent-ink);
+}
+
+.vl-pill--dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
+}
+
+/* Links & Buttons */
+a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

@@ -1,0 +1,106 @@
+/* MarketEvidenceTable styling */
+.market-evidence-table-container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.met-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.met-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 2px 0;
+}
+
+.met-subtitle {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.met-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.met-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body-sm);
+  text-align: left;
+}
+
+.met-table th,
+.met-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: middle;
+}
+
+.met-table thead th {
+  background-color: var(--color-surface-muted);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.met-theme-cell {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.met-evidence-cell {
+  color: var(--color-text-primary);
+  font-size: 12px;
+  line-height: var(--line-height-normal);
+  max-width: 260px;
+}
+
+.met-type-cell {
+  white-space: nowrap;
+}
+
+.met-period-cell {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.met-relevance-cell {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  max-width: 280px;
+}
+
+.met-footer-note {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--space-2);
+}
+
+@media (max-width: 900px) {
+  .met-table th,
+  .met-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+}
